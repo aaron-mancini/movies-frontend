@@ -51,6 +51,20 @@ class MoviesApi {
         let res = await this.request(`auth/decode`, token, "post")
         return res.username;
     }
+
+    /** Search for a movie */
+
+    static async movieSearch(term) {
+        let res = await this.request(`movies/search/${term}`);
+        return res.movie;
+    }
+
+    /** Get movie details */
+
+    static async getMovie(title) {
+        let res = await this.request(`movies/${title}`);
+        return res.movie;
+    }
 }
 
 export default MoviesApi;

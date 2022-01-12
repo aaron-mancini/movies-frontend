@@ -6,7 +6,8 @@ import LoginForm from './auth/LoginForm';
 import SignupForm from './auth/SignupForm';
 import Home from './Home';
 import NavBar from './NavBar';
-// import jwt from 'jsonwebtoken';
+import SearchResults from './SearchResults';
+import MovieDetails from './MovieDetails';
 import UserContext from './auth/UserContext';
 
 export const TOKEN_STORAGE_ID = "movie-token";
@@ -22,7 +23,6 @@ function App() {
     async function getCurrentUser() {
       if (token) {
         try {
-          // let { username } = jwt.decode(token);
           let username = await MoviesApi.decodeToken({token});
 
           MoviesApi.token = token;
@@ -84,6 +84,9 @@ function App() {
         <NavBar logout={logout}/>
         <Routes>
           <Route path="/" element={<Home />}/>
+
+          <Route path="/search" element={<SearchResults />}/>
+          <Route path="/movie/:title" element={<MovieDetails />}/>
 
           <Route path="/login" element={<LoginForm login={login}/>}/>
           <Route path="/signup" element={<SignupForm signup={signup}/>}/>
