@@ -9,6 +9,7 @@ import NavBar from './NavBar';
 import SearchResults from './SearchResults';
 import MovieDetails from './MovieDetails';
 import UserContext from './auth/UserContext';
+import ProfileForm from './ProfileForm';
 
 export const TOKEN_STORAGE_ID = "movie-token";
 
@@ -99,6 +100,7 @@ function App() {
 
           <Route path="/search" element={<SearchResults />}/>
           <Route path="/movie/:title" element={<MovieDetails />}/>
+          <Route path="/profile" element={<ProfileForm logout={logout}/>} />
 
           <Route path="/login" element={<LoginForm login={login}/>}/>
           <Route path="/signup" element={<SignupForm signup={signup}/>}/>
