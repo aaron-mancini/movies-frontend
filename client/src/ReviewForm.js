@@ -1,11 +1,22 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
+// import { useNavigate, useParams } from "react-router-dom";
 import { Form, Input, Button } from "reactstrap";
 import UserContext from "./auth/UserContext";
 
 const ReviewForm = ({ movieId, createReview }) => {
+    // const { title } = useParams();
+    // const navigate = useNavigate();
     const { currentUser } = useContext(UserContext);
-
     const [formData, setFormData] = useState({ movieId: movieId });
+
+    useEffect(function setUsername() {
+        if(currentUser) {
+            setFormData(fData => ({
+                ...fData,
+                username: currentUser.username
+            }));
+        }
+    }, [currentUser])
 
     const handleChange = evt => {
         const { name, value } = evt.target;
@@ -17,11 +28,10 @@ const ReviewForm = ({ movieId, createReview }) => {
 
     async function handleSubmit(evt) {
         evt.preventDefault();
-        setFormData(fData => ({
-            ...fData,
-            username: currentUser.username
-        }));
         await createReview(formData);
+        // if (result.success) {
+        //     navigate(`/movie/${title}`);
+        // }
     }
 
     if(!currentUser) {

@@ -4,11 +4,12 @@ import MoviesApi from "./api/api";
 import ReviewForm from "./ReviewForm";
 import Reviews from "./reviews/Reviews";
 
-const MovieDetails = ({ createReview }) => {
+const MovieDetails = () => {
     const { title } = useParams();
     console.debug("MovieTitle:", title);
 
     const [movieInfo, setMovieInfo] = useState();
+    const [movieId, setMovieId] = useState();
     const [loading, setLoading] = useState(false);
 
     useEffect(function getMovieDetails() {
@@ -16,6 +17,7 @@ const MovieDetails = ({ createReview }) => {
             try {
                 let movie = await MoviesApi.getMovie(title);                
                 setMovieInfo(movie);
+                setMovieId(movie.imdbID);
             } catch (error) {
                 // nav to movie not found page?
             }
@@ -25,6 +27,15 @@ const MovieDetails = ({ createReview }) => {
         getMovie();
     }, [title]);
 
+    async function createReview(data) {
+        try {
+          await MoviesApi.createReview(data);
+          return { success: true }
+        } catch (error) {
+          console.error("review post failed", error);
+          return { success: false, error };
+        }
+      }
 
 
     console.log(movieInfo);
@@ -42,7 +53,7 @@ const MovieDetails = ({ createReview }) => {
             <img src={movieInfo.Poster} alt={`${movieInfo.Title} poster`}></img>
             <h1>{movieInfo.Title}</h1>
             <p>Year: {movieInfo.Year}</p>
-            <Reviews movieId={movieInfo.imdbID}/>
+            <Reviews movieId={movieId}/>
             <ReviewForm movieId={movieInfo.imdbID} createReview={createReview} />
         </div>
     )
