@@ -65,6 +65,20 @@ class MoviesApi {
         let res = await this.request(`movies/${title}`);
         return res.movie;
     }
+
+    /** Create a review */
+
+    static async createReview(data) {
+        let res = await this.request(`reviews`, data, "post");
+        return res.review;
+    }
+
+    /** Get reveiws for a movie */
+
+    static async getMovieReviews(movieId) {
+        let res = await this.request(`reviews/${movieId}`);
+        return res.reviews;
+    }
 }
 
 export default MoviesApi;

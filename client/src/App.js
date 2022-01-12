@@ -70,6 +70,18 @@ function App() {
     setToken(null);
   }
 
+  /** Create a review */
+
+  async function createReview(data) {
+    try {
+      await MoviesApi.createReview(data);
+      return { success: true }
+    } catch (error) {
+      console.error("review post failed", error);
+      return { success: false, error };
+    }
+  }
+
   if (!loading) {
     return (
       <div>
@@ -86,7 +98,7 @@ function App() {
           <Route path="/" element={<Home />}/>
 
           <Route path="/search" element={<SearchResults />}/>
-          <Route path="/movie/:title" element={<MovieDetails />}/>
+          <Route path="/movie/:title" element={<MovieDetails createReview={createReview} />}/>
 
           <Route path="/login" element={<LoginForm login={login}/>}/>
           <Route path="/signup" element={<SignupForm signup={signup}/>}/>
