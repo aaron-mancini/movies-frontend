@@ -87,11 +87,39 @@ class MoviesApi {
         return res.review;
     }
 
-    /** Get reveiws for a movie */
+    /** Get reviews for a movie */
 
     static async getMovieReviews(movieId) {
         let res = await this.request(`reviews/${movieId}`);
         return res.reviews;
+    }
+
+    /** Get all reviews by a user */
+
+    static async getUserReviews(username) {
+        let res = await this.request(`reviews/user/${username}`);
+        return res.reviews;
+    }
+
+    /** Get a review by Id */
+
+    static async getReviewById(id) {
+        let res = await this.request(`reviews/id/${id}`);
+        return res.review;
+    }
+
+    /** Update a review */
+
+    static async updateReview(username, movieId, data) {
+        let res = await this.request(`reviews/${username}/${movieId}`, data, "patch");
+        return res.review;
+    }
+
+    /** Delete a review */
+
+    static async removeReview(id) {
+        let res = await this.request(`reviews/${id}`, {}, "delete");
+        return res;
     }
 }
 

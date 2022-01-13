@@ -40,6 +40,9 @@ const NavBar = ({ logout }) => {
                             <NavLink to="/profile">Profile</NavLink>
                         </NavItem>
                         <NavItem>
+                            <NavLink to="/reviews">My Reviews</NavLink>
+                        </NavItem>
+                        <NavItem>
                             <NavLink to="/" onClick={logout}>Log out {currentUser.username}</NavLink>
                         </NavItem>
                     </Nav>

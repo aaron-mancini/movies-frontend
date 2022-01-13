@@ -10,6 +10,8 @@ import SearchResults from './SearchResults';
 import MovieDetails from './MovieDetails';
 import UserContext from './auth/UserContext';
 import ProfileForm from './ProfileForm';
+import UserReviews from './reviews/UserReviews';
+import EditReviewForm from './reviews/EditReviewForm';
 
 export const TOKEN_STORAGE_ID = "movie-token";
 
@@ -101,6 +103,8 @@ function App() {
           <Route path="/search" element={<SearchResults />}/>
           <Route path="/movie/:title" element={<MovieDetails />}/>
           <Route path="/profile" element={<ProfileForm logout={logout}/>} />
+          <Route path="/reviews" element={<UserReviews />} />
+          <Route path="/reviews/edit/:id" element={<EditReviewForm />} />
 
           <Route path="/login" element={<LoginForm login={login}/>}/>
           <Route path="/signup" element={<SignupForm signup={signup}/>}/>
