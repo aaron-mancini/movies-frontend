@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pt-5"
+  >
+    <div
+      class="SignupForm"
+    >
+      <div
+        class="container col-md-6 offset-md-3 col-lg-4 offset-lg-4"
+      >
+        <h2
+          class="mb-3"
+        >
+          Profile
+        </h2>
+        <button
+          class="btn btn-secondary"
+          type="button"
+        >
+          Delete Profile
+        </button>
+        <div
+          class="card"
+        >
+          <div
+            class="card-body"
+          >
+            <form
+              class=""
+            >
+              <div
+                class="mb-3"
+              >
+                <label
+                  class="form-label"
+                >
+                  Username
+                </label>
+                <p>
+                  testuser
+                </p>
+              </div>
+              <div
+                class="mb-3"
+              >
+                <label
+                  class="form-label"
+                >
+                  First name
+                </label>
+                <input
+                  class="form-control"
+                  name="firstName"
+                  type="text"
+                />
+              </div>
+              <div
+                class="mb-3"
+              >
+                <label
+                  class="form-label"
+                >
+                  Last name
+                </label>
+                <input
+                  class="form-control"
+                  name="lastName"
+                  type="text"
+                />
+              </div>
+              <div
+                class="mb-3"
+              >
+                <label
+                  class="form-label"
+                >
+                  Email
+                </label>
+                <input
+                  class="form-control"
+                  name="email"
+                  placeholder="test@test.net"
+                  type="email"
+                />
+              </div>
+              <div
+                class="mb-3"
+              >
+                <label
+                  class="form-label"
+                >
+                  Confirm password to make changes
+                </label>
+                <input
+                  class="form-control"
+                  name="password"
+                  type="password"
+                />
+              </div>
+              <button
+                class="btn btn-primary"
+                type="submit"
+              >
+                Save Changes
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

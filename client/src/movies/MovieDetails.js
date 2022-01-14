@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MoviesApi from "../api/api";
-import ReviewForm from "../ReviewForm";
+import ReviewForm from "../reviews/ReviewForm";
 import Reviews from "../reviews/Reviews";
 
 const MovieDetails = () => {

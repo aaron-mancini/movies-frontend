@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <nav
+      class="navbar navbar-expand-md"
+    >
+      <div
+        class="container-fluid"
+      >
+        <a
+          aria-current="page"
+          class="navbar-brand active"
+          href="/"
+        >
+          Movies
+        </a>
+        <form
+          class="d-flex"
+        >
+          <input
+            class="form-control"
+            name="search"
+            placeholder="Search"
+            type="search"
+          />
+          <button
+            class="btn btn-secondary"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+        <ul
+          class="ml-auto navbar-nav"
+        >
+          <li
+            class="nav-item"
+          >
+            <a
+              class=""
+              href="/profile"
+            >
+              Profile
+            </a>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <a
+              class=""
+              href="/reviews"
+            >
+              My Reviews
+            </a>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <a
+              aria-current="page"
+              class="active"
+              href="/"
+            >
+              Log out testuser
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when logged out 1`] = `
+<DocumentFragment>
+  <div>
+    <nav
+      class="navbar navbar-expand-md"
+    >
+      <div
+        class="container-fluid"
+      >
+        <a
+          aria-current="page"
+          class="navbar-brand active"
+          href="/"
+        >
+          Movies
+        </a>
+        <form
+          class="d-flex"
+        >
+          <input
+            class="form-control"
+            name="search"
+            placeholder="Search"
+            type="search"
+          />
+          <button
+            class="btn btn-secondary"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+        <ul
+          class="ml-auto navbar-nav"
+        >
+          <li
+            class="nav-item"
+          >
+            <a
+              class=""
+              href="/login"
+            >
+              Log In
+            </a>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <a
+              class=""
+              href="/signup"
+            >
+              Sign up
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</DocumentFragment>
+`;
