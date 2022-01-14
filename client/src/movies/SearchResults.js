@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
-import MoviesApi from "./api/api";
+import MoviesApi from "../api/api";
 
 const SearchResults = () => {
     const [loading, setLoading] = useState(false);

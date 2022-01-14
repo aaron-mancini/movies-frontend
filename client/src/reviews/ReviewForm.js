@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 // import { useNavigate, useParams } from "react-router-dom";
 import { Form, Input, Button } from "reactstrap";
-import UserContext from "./auth/UserContext";
+import UserContext from "../auth/UserContext";
 
 const ReviewForm = ({ movieId, createReview }) => {
     // const { title } = useParams();

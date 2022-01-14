@@ -4,12 +4,12 @@ import useLocalStorage from './hooks/useLocalStorage';
 import MoviesApi from './api/api';
 import LoginForm from './auth/LoginForm';
 import SignupForm from './auth/SignupForm';
-import Home from './Home';
-import NavBar from './NavBar';
-import SearchResults from './SearchResults';
-import MovieDetails from './MovieDetails';
+import Home from './common/Home';
+import NavBar from './common/NavBar';
+import SearchResults from './movies/SearchResults';
+import MovieDetails from './movies/MovieDetails';
 import UserContext from './auth/UserContext';
-import ProfileForm from './ProfileForm';
+import ProfileForm from './profiles/ProfileForm';
 import UserReviews from './reviews/UserReviews';
 import EditReviewForm from './reviews/EditReviewForm';
 

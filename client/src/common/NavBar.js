@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Navbar, Nav, NavItem, Form, Input, Button } from "reactstrap";
-import UserContext from "./auth/UserContext";
+import UserContext from "../auth/UserContext";
 
 const NavBar = ({ logout }) => {
     const navigate = useNavigate();

@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import { Card, CardBody, Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
-import MoviesApi from "./api/api";
-import UserContext from "./auth/UserContext";
+import MoviesApi from "../api/api";
+import UserContext from "../auth/UserContext";
 
 const ProfileForm = ({ logout }) => {
     const navigate = useNavigate();
