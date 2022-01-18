@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { Navbar, Nav, NavItem, Form, Input, Button } from "reactstrap";
+import { Navbar, Nav, NavbarBrand, NavItem, Form, Input, Button, NavbarToggler, Collapse } from "reactstrap";
 import UserContext from "../auth/UserContext";
 
 const NavBar = ({ logout }) => {
@@ -24,8 +24,8 @@ const NavBar = ({ logout }) => {
     if(currentUser) {
         return (
             <div>
-                <Navbar expand="md">
-                    <NavLink to="/" className="navbar-brand">Movies</NavLink>
+                <Navbar expand="md" color="dark" dark>
+                    <NavbarBrand href="/">FilmRate</NavbarBrand>
                     <Form className="d-flex" onSubmit={handleSubmit}>
                         <Input 
                             type="search"
@@ -52,25 +52,36 @@ const NavBar = ({ logout }) => {
     }
     return (
         <div>
-            <Navbar expand="md">
-                <NavLink to="/" className="navbar-brand">Movies</NavLink>
-                <Form className="d-flex" onSubmit={handleSubmit}>
-                    <Input 
-                        type="search"
-                        name="search"
-                        placeholder="Search"
-                        onChange={handleChange}
-                    />
-                    <Button type="submit">Search</Button> 
-                </Form>
-                <Nav className="ml-auto" navbar>                  
-                    <NavItem>
-                        <NavLink to="/login">Log In</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink to="/signup">Sign up</NavLink>
-                    </NavItem>
-                </Nav>
+            <Navbar expand="md" color="dark" dark>
+                <NavbarBrand href="/">FilmRate</NavbarBrand>
+                <NavbarToggler onClick={function noRefCheck(){}} />
+                <Collapse navbar>
+                    <Nav
+                    className="me-auto"
+                    navbar
+                    >
+                        <NavItem>
+                            <Form className="d-flex" onSubmit={handleSubmit}>
+                                <Input 
+                                    type="search"
+                                    name="search"
+                                    placeholder="Search"
+                                    onChange={handleChange}
+                                />
+                                <Button type="submit" className="mx-2">Search</Button> 
+                            </Form>
+                        </NavItem>              
+
+                    </Nav>
+                    <Nav>
+                        <NavItem className="px-2">
+                            <Button href="/login">Log in</Button>
+                        </NavItem>
+                        <NavItem className="mr-1">
+                            <Button href="/signup">Sign up</Button>
+                        </NavItem>
+                    </Nav>
+                </Collapse>
             </Navbar>
         </div>
     );

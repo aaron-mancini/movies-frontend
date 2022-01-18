@@ -12,6 +12,7 @@ import UserContext from './auth/UserContext';
 import ProfileForm from './profiles/ProfileForm';
 import UserReviews from './reviews/UserReviews';
 import EditReviewForm from './reviews/EditReviewForm';
+import './App.css';
 
 export const TOKEN_STORAGE_ID = "movie-token";
 
