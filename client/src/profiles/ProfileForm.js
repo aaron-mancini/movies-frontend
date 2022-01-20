@@ -33,11 +33,10 @@ const ProfileForm = ({ logout }) => {
             password: formData.password
         }
 
-        let username = formData.username;
         let updateUser;
 
         try {
-            updateUser = await MoviesApi.updateProfile(username, profile);
+            updateUser = await MoviesApi.updateProfile(profile);
         } catch (error) {
             return;
         }
@@ -48,6 +47,7 @@ const ProfileForm = ({ logout }) => {
         }));
         
         setCurrentUser(updateUser);
+        alert("Profile saved!");
     }
 
     async function handleDelete() {
@@ -56,7 +56,7 @@ const ProfileForm = ({ logout }) => {
         if (deleteConfirm === currentUser.username) {
             try {
                 navigate("/");
-                let result = await MoviesApi.removeAccount(currentUser.username);
+                let result = await MoviesApi.removeAccount();
                 logout();
                 if (result.deleted) {
                     alert("Account Deleted!");

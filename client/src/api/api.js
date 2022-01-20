@@ -40,22 +40,22 @@ class MoviesApi {
 
     /** Update a user profile */
 
-    static async updateProfile(username, profileData) {
-        let res = await this.request(`users/${username}`, profileData, "patch");
+    static async updateProfile(profileData) {
+        let res = await this.request(`users`, profileData, "patch");
         return res.user;
     }
 
     /** Remove a user account */
 
-    static async removeAccount(username) {
-        let res = await this.request(`users/${username}`, {}, "delete");
+    static async removeAccount() {
+        let res = await this.request(`users`, {}, "delete");
         return res;
     }
 
     /** Get info about a user */
 
-    static async getUser(username) {
-        let res = await this.request(`users/${username}`);
+    static async getUser() {
+        let res = await this.request(`users`);
         return res.user;
     }
 

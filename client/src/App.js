@@ -27,10 +27,8 @@ function App() {
     async function getCurrentUser() {
       if (token) {
         try {
-          let username = await MoviesApi.decodeToken({token});
-
           MoviesApi.token = token;
-          let currentUser = await MoviesApi.getUser(username);
+          let currentUser = await MoviesApi.getUser();
           setCurrentUser(currentUser);
         } catch (error) {
           setCurrentUser(null);
