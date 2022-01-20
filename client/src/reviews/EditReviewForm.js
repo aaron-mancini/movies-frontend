@@ -40,14 +40,14 @@ const EditReviewForm = () => {
             rating: formData.rating,
         }
 
-        let username = formData.username;
         let movieId = formData.movie_id;
 
         try {
-            await MoviesApi.updateReview(username, movieId, review)
+            await MoviesApi.updateReview(movieId, review)
         } catch (error) {
             return;
         }
+        navigate("/reviews");
     }
 
     async function handleDelete() {
@@ -55,11 +55,11 @@ const EditReviewForm = () => {
         
         if (deleteConfirm === "delete") {
             try {
-                navigate("/reviews");
                 let result = await MoviesApi.removeReview(id);
                 if (result.deleted) {
                     alert("Review deleted!");
                 }   
+                navigate("/reviews");
             } catch (error) {
                 alert("Error, review not deleted.")
             }

@@ -11,13 +11,16 @@ const MovieDetails = () => {
     const [movieInfo, setMovieInfo] = useState();
     const [movieId, setMovieId] = useState();
     const [loading, setLoading] = useState(false);
+    const [reviews, setReviews] = useState([]);
 
     useEffect(function getMovieDetails() {
         async function getMovie() {
             try {
-                let movie = await MoviesApi.getMovie(title);                
+                let movie = await MoviesApi.getMovie(title);      
                 setMovieInfo(movie);
                 setMovieId(movie.imdbID);
+                let movieReviews = await MoviesApi.getMovieReviews(movieId);
+                setReviews(movieReviews);
             } catch (error) {
                 // nav to movie not found page?
             }
@@ -25,11 +28,12 @@ const MovieDetails = () => {
         }
         setLoading(false);
         getMovie();
-    }, [title]);
+    }, [title, movieId]);
 
     async function createReview(data) {
         try {
-          await MoviesApi.createReview(data);
+          let result = await MoviesApi.createReview(data);
+          setReviews(d => ([...d, result]))
           return { success: true }
         } catch (error) {
           console.error("review post failed", error);
@@ -53,7 +57,7 @@ const MovieDetails = () => {
             <img src={movieInfo.Poster} alt={`${movieInfo.Title} poster`}></img>
             <h1>{movieInfo.Title}</h1>
             <p>Year: {movieInfo.Year}</p>
-            <Reviews movieId={movieId}/>
+            <Reviews reviews={reviews}/>
             <ReviewForm movieId={movieInfo.imdbID} createReview={createReview} />
         </div>
     )

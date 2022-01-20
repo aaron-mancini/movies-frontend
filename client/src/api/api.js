@@ -110,8 +110,8 @@ class MoviesApi {
 
     /** Update a review */
 
-    static async updateReview(username, movieId, data) {
-        let res = await this.request(`reviews/${username}/${movieId}`, data, "patch");
+    static async updateReview(movieId, data) {
+        let res = await this.request(`reviews/${movieId}`, data, "patch");
         return res.review;
     }
 
