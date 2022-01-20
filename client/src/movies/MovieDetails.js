@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Container, Row, Col } from "reactstrap";
 import MoviesApi from "../api/api";
 import ReviewForm from "../reviews/ReviewForm";
 import Reviews from "../reviews/Reviews";
@@ -53,12 +54,34 @@ const MovieDetails = () => {
       }
 
     return (
-        <div>
-            <img src={movieInfo.Poster} alt={`${movieInfo.Title} poster`}></img>
-            <h1>{movieInfo.Title}</h1>
-            <p>Year: {movieInfo.Year}</p>
+        <div className="pt-5">
+          <Container>
+            <Row>
+              <Col>
+                <div>
+                  <img src={movieInfo.Poster} alt={`${movieInfo.Title} poster`}></img>
+                  <h1>{movieInfo.Title}</h1>
+                  <p>Year: {movieInfo.Year}</p>
+                </div>
+              </Col>
+              <Col>
+                <div>
+                  <h3>Film Info</h3>
+                  <h6>Rated: {movieInfo.Rated}</h6>
+                  <h6>Genre: {movieInfo.Genre}</h6>
+                  <h6>Language: {movieInfo.Language}</h6>
+                  <h6>Director: {movieInfo.Director}</h6>
+                  <h6>Writer: {movieInfo.Writer}</h6>
+                  <h6>Released: {movieInfo.Released}</h6>
+                  <h6>BoxOffice: {movieInfo.BoxOffice}</h6>
+                  <h6>Runtime: {movieInfo.Runtime}</h6>
+                </div>
+              </Col>
+            </Row>
             <Reviews reviews={reviews}/>
             <ReviewForm movieId={movieInfo.imdbID} createReview={createReview} />
+          </Container>
+
         </div>
     )
 }

@@ -1,11 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
-// import { useNavigate, useParams } from "react-router-dom";
-import { Form, Input, Button } from "reactstrap";
+import { Form, Input, Button, Card, CardBody } from "reactstrap";
 import UserContext from "../auth/UserContext";
 
 const ReviewForm = ({ movieId, createReview }) => {
-    // const { title } = useParams();
-    // const navigate = useNavigate();
     const { currentUser } = useContext(UserContext);
     const [formData, setFormData] = useState({ movieId: movieId });
 
@@ -29,9 +26,6 @@ const ReviewForm = ({ movieId, createReview }) => {
     async function handleSubmit(evt) {
         evt.preventDefault();
         await createReview(formData);
-        // if (result.success) {
-        //     navigate(`/movie/${title}`);
-        // }
     }
 
     if(!currentUser) {
@@ -44,21 +38,25 @@ const ReviewForm = ({ movieId, createReview }) => {
 
     return (
         <div>
-            <Form onSubmit={handleSubmit}>
-                <Input 
-                    type="textarea"
-                    name="review"
-                    onChange={handleChange}
-                />
-                <Input 
-                    type="number"
-                    name="rating"
-                    max={10}
-                    min={1}
-                    onChange={handleChange}
-                />
-                <Button>Post</Button>
-            </Form>
+            <Card>
+                <CardBody>
+                    <Form onSubmit={handleSubmit}>
+                        <Input 
+                            type="textarea"
+                            name="review"
+                            onChange={handleChange}
+                        />
+                        <Input 
+                            type="number"
+                            name="rating"
+                            max={10}
+                            min={1}
+                            onChange={handleChange}
+                        />
+                        <Button>Post</Button>
+                    </Form>
+                </CardBody>
+            </Card>
         </div>
     )
 }
