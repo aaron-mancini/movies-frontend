@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { Button } from "reactstrap";
+import { Button, Card, CardBody, CardTitle, CardText } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../auth/UserContext";
 
-const ReviewCard = ({ review, rating, username, id }) => {
+const ReviewCard = ({ review, rating, username, id, title }) => {
     const navigate = useNavigate();
     const { currentUser } = useContext(UserContext);
 
@@ -19,12 +19,14 @@ const ReviewCard = ({ review, rating, username, id }) => {
 
 
     return (
-        <div>
-            <h3>{username}</h3>
-            <p>Rating: {rating}/10</p>
-            <p>Review: {review}</p>
+        <Card>
+          <CardBody>
+            {title ? <CardTitle>{title}</CardTitle> : <CardTitle>User: {username}</CardTitle>}
+            <CardText>Rating: {rating}/10</CardText>
+            <CardText>Review: {review}</CardText>
             {(currentUser && currentUser.username === username) ? showEditButton() : null}
-        </div>
+          </CardBody>
+        </Card>
     )
 }
 

@@ -7,7 +7,7 @@ body {
   background-color: #d6d6d1;
 }
 
-.row .card:hover {
+.movies-list .card:hover {
   transform: scale(1.1);
 }
 

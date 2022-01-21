@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react"
-import { Form, Input, Button, Card, CardBody } from "reactstrap";
+import { Form, Input, Button, Card, CardBody, Label } from "reactstrap";
 import UserContext from "../auth/UserContext";
 
-const ReviewForm = ({ movieId, createReview }) => {
+const ReviewForm = ({ movieId, createReview, title }) => {
     const { currentUser } = useContext(UserContext);
-    const [formData, setFormData] = useState({ movieId: movieId });
+    const [formData, setFormData] = useState({ movieId: movieId, title: title });
 
     useEffect(function setUsername() {
         if(currentUser) {
@@ -41,11 +41,13 @@ const ReviewForm = ({ movieId, createReview }) => {
             <Card>
                 <CardBody>
                     <Form onSubmit={handleSubmit}>
+                        <Label>Review</Label>
                         <Input 
                             type="textarea"
                             name="review"
                             onChange={handleChange}
                         />
+                        <Label>Rating out of 10</Label>
                         <Input 
                             type="number"
                             name="rating"
@@ -53,7 +55,7 @@ const ReviewForm = ({ movieId, createReview }) => {
                             min={1}
                             onChange={handleChange}
                         />
-                        <Button>Post</Button>
+                        <Button className="mt-2">Post</Button>
                     </Form>
                 </CardBody>
             </Card>

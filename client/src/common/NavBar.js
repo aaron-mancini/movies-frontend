@@ -26,26 +26,36 @@ const NavBar = ({ logout }) => {
             <div>
                 <Navbar expand="md" color="dark" dark>
                     <NavbarBrand href="/">FilmRate</NavbarBrand>
-                    <Form className="d-flex" onSubmit={handleSubmit}>
-                        <Input 
-                            type="search"
-                            name="search"
-                            placeholder="Search"
-                            onChange={handleChange}
-                        />
-                        <Button type="submit">Search</Button> 
-                    </Form>
-                    <Nav className="ml-auto" navbar>                  
-                        <NavItem>
-                            <NavLink to="/profile">Profile</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink to="/reviews">My Reviews</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink to="/" onClick={logout}>Log out {currentUser.username}</NavLink>
-                        </NavItem>
-                    </Nav>
+                    <NavbarToggler onClick={function noRefCheck(){}} />
+                    <Collapse navbar>
+                        <Nav 
+                        className="me-auto" 
+                        navbar
+                        > 
+                            <NavItem>
+                                <Form className="d-flex" onSubmit={handleSubmit}>                    
+                                    <Input 
+                                        type="search"
+                                        name="search"
+                                        placeholder="Search"
+                                        onChange={handleChange}
+                                    />
+                                    <Button type="submit" className="mx-2">Search</Button> 
+                                </Form>
+                            </NavItem>
+                        </Nav>
+                        <Nav>
+                            <NavItem className="px-2">
+                                <Button href="/profile">Profile</Button>
+                            </NavItem>
+                            <NavItem>
+                                <Button href="/reviews">My Reviews</Button>
+                            </NavItem>
+                            <NavItem className="px-2">
+                                <Button href="/" onClick={logout}>Log out</Button>
+                            </NavItem>
+                        </Nav>                        
+                    </Collapse>
                 </Navbar>
             </div>
         );
@@ -71,7 +81,6 @@ const NavBar = ({ logout }) => {
                                 <Button type="submit" className="mx-2">Search</Button> 
                             </Form>
                         </NavItem>              
-
                     </Nav>
                     <Nav>
                         <NavItem className="px-2">

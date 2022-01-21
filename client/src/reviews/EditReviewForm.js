@@ -79,8 +79,8 @@ const EditReviewForm = () => {
         <div className="pt-5">
             <div className="SignupForm">
                 <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-                    <h2 className="mb-3">Profile</h2>
-                    <Button onClick={handleDelete}>Delete Review</Button>
+                    <h2 className="mb-3">Edit Review</h2>
+                    
                     <Card>
                         <CardBody>
                             <Form onSubmit={handleSubmit}>
@@ -90,7 +90,8 @@ const EditReviewForm = () => {
                                 </FormGroup>
                                 <FormGroup>
                                     <Label>Review</Label>
-                                    <Input                                        
+                                    <Input
+                                        type="textarea"                                        
                                         name="review"
                                         placeholder={formData.review}
                                         onChange={handleChange}
@@ -109,6 +110,9 @@ const EditReviewForm = () => {
                                 </FormGroup>
                                 <Button type="submit" color="primary">
                                     Save Changes
+                                </Button>
+                                <Button onClick={handleDelete} className="mx-2">
+                                    Delete Review
                                 </Button>
                             </Form>
                         </CardBody>

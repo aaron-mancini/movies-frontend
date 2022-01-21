@@ -31,7 +31,7 @@ const SearchResults = () => {
 
     return (
         <>
-            <Row xs={2} md={5} className="g-4 m-2">
+            <Row xs={2} md={5} className="g-4 m-2 movies-list">
                 {moviesList.map(m => (
                     <MovieCard key={m.imdbID} title={m.Title} year={m.Year} poster={m.Poster} type={m.Type}/>
                 ))}

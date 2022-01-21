@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Row } from "reactstrap";
 import MoviesApi from "../api/api";
 import UserContext from "../auth/UserContext";
 import ReviewCard from "./ReviewCard";
@@ -32,9 +33,9 @@ const UserReviews = () => {
     }
 
     return (
-        <div>
-            {reviews.map(r => <ReviewCard key={r.id} review={r.review} rating={r.rating} username={r.username} id={r.id}/>)}
-        </div>
+        <Row xs={1} md={2} className="g-4 m-5">
+            {reviews.map(r => <ReviewCard key={r.id} review={r.review} rating={r.rating} username={r.username} id={r.id} title={r.title}/>)}
+        </Row>
     )
 }
 
