@@ -77,19 +77,23 @@ const MovieDetails = () => {
                   <h6>Released: {movieInfo.Released}</h6>
                   <h6>BoxOffice: {movieInfo.BoxOffice}</h6>
                   <h6>Runtime: {movieInfo.Runtime}</h6>
+                  <h6>Actors: {movieInfo.Actors}</h6>
+                  <h6>Plot: {movieInfo.Plot}</h6>
                 </div>
               </Col>
             </Row>
             <hr></hr>
-              <div className="container col-md-6 offset-md-3 col-lg-6">
-              <h2>Write a review!</h2>
+              <div className="container col-md-6 offset-md-3 col-lg-6">              
               {
               (reviews.some(r => r.username === currentUser.username)) ? 
               <div></div> : 
-              <ReviewForm movieId={movieInfo.imdbID} title={movieInfo.Title} createReview={createReview} />
-              }
+              <div>
+                <h2>Write a review!</h2>
+                <ReviewForm movieId={movieInfo.imdbID} title={movieInfo.Title} createReview={createReview} />
+                <hr></hr>
               </div>
-            <hr></hr>
+              }
+              </div>          
             <h2>FilmRate Reviews</h2>
             <Row xs={1} md={2} className="g-4 m-5">
               <Reviews reviews={reviews}/>

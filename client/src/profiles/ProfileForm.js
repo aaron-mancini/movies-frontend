@@ -73,7 +73,7 @@ const ProfileForm = ({ logout }) => {
             <div className="SignupForm">
                 <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4">
                     <h2 className="mb-3">Profile</h2>
-                    <Button onClick={handleDelete}>Delete Profile</Button>
+                    
                     <Card>
                         <CardBody>
                             <Form onSubmit={handleSubmit}>
@@ -116,6 +116,9 @@ const ProfileForm = ({ logout }) => {
                                 </FormGroup>
                                 <Button type="submit" color="primary">
                                     Save Changes
+                                </Button>
+                                <Button onClick={handleDelete} className="mx-2">
+                                    Delete Profile
                                 </Button>
                             </Form>
                         </CardBody>

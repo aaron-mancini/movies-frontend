@@ -33,7 +33,7 @@ const UserReviews = () => {
     }
 
     return (
-        <Row xs={1} md={2} className="g-4 m-5">
+        <Row xs={1} md={3} className="g-2 m-4">
             {reviews.map(r => <ReviewCard key={r.id} review={r.review} rating={r.rating} username={r.username} id={r.id} title={r.title}/>)}
         </Row>
     )

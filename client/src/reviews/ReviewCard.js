@@ -19,14 +19,16 @@ const ReviewCard = ({ review, rating, username, id, title }) => {
 
 
     return (
+        <div className="p-3">
         <Card>
           <CardBody>
-            {title ? <CardTitle>{title}</CardTitle> : <CardTitle>User: {username}</CardTitle>}
+            {title ? <CardTitle tag="h4">{title}</CardTitle> : <CardTitle>User: {username}</CardTitle>}
             <CardText>Rating: {rating}/10</CardText>
             <CardText>Review: {review}</CardText>
             {(currentUser && currentUser.username === username) ? showEditButton() : null}
           </CardBody>
         </Card>
+        </div>
     )
 }
 
