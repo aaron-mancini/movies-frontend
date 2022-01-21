@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# FilmRate
+ 
+FilmRate is a web app that allows users to view film and tv show information from the obdb API. Users
+can also make and account and write their own review for any film.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Link to Backend - https://github.com/aaron-mancini/Capstone-Project-backend
 
-## Available Scripts
+Movie API - OMDBAPI - http://www.omdbapi.com/
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Search for film by title and view data
+- Account creation, edit, delete
+- Review creation for any film
+- Users can view other user reviews and view a list of all reviews they have written
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## User flow / Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- A user without an account can search for films with the search bar and view data and reviews
+  written by registered users.
+- A user with a account can view their profile, reviews, and movie data as well as create their
+  own reivews.
 
-### `npm test`
+## API - OMDBAPI http://www.omdbapi.com/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This API contains a few enpoints to search for movie data. Data is fairly standard movie data.
 
-### `npm run build`
+## Project Tools and Dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React
+  - bootstrap/reactstrap
+  - axios
+  - react-router-dom
+- Node.js
+  - Express.js
+  - jsonwebtoken
+  - jsonschema
+  - cors
+  - bcrypt
+  - axios
+- Postgresql
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Imporvements/Issues
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Search suggestion dropdown: add suggestions to a dropdown menu on the search bar
+- Allow users to comment on other user reveiws and vote on reviews
+- Allow users to friend other users
+- Allow users to post a status message or "post"
+- Add user statistics page which can track movie review data like their average review
+  of a film by genre.
