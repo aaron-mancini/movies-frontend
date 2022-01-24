@@ -48,3 +48,9 @@ This API contains a few enpoints to search for movie data. Data is fairly standa
 - Allow users to post a status message or "post"
 - Add user statistics page which can track movie review data like their average review
   of a film by genre.
+
+## To-Do
+
+- Add homepage
+- Add 404 page
+- Change movie card hover feature
