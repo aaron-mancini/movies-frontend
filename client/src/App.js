@@ -13,6 +13,7 @@ import ProfileForm from './profiles/ProfileForm';
 import UserReviews from './reviews/UserReviews';
 import EditReviewForm from './reviews/EditReviewForm';
 import './App.css';
+import NotFound from './common/NotFound';
 
 export const TOKEN_STORAGE_ID = "movie-token";
 
@@ -97,6 +98,7 @@ function App() {
       <UserContext.Provider value={{ currentUser, setCurrentUser }}>
         <NavBar logout={logout}/>
         <Routes>
+          <Route path="*" element={<NotFound />}/>
           <Route path="/" element={<Home />}/>
 
           <Route path="/search" element={<SearchResults />}/>

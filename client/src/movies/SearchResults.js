@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Row } from "reactstrap";
 import MoviesApi from "../api/api";
+import NotFound from "../common/NotFound";
 import MovieCard from "./MovieCard";
 
 const SearchResults = () => {
@@ -31,11 +32,13 @@ const SearchResults = () => {
 
     return (
         <>
-            <Row xs={2} md={5} className="g-4 m-2 movies-list">
-                {moviesList.map(m => (
-                    <MovieCard key={m.imdbID} title={m.Title} year={m.Year} poster={m.Poster} type={m.Type}/>
-                ))}
+            {moviesList
+            ? <Row xs={2} md={5} className="g-4 m-2 movies-list">
+            {moviesList.map(m => (
+                <MovieCard key={m.imdbID} title={m.Title} year={m.Year} poster={m.Poster} type={m.Type}/>
+            ))}
             </Row>
+            : <NotFound />}
         </>
     )
 }

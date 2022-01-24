@@ -5,6 +5,7 @@ import MoviesApi from "../api/api";
 import ReviewForm from "../reviews/ReviewForm";
 import Reviews from "../reviews/Reviews";
 import UserContext from "../auth/UserContext";
+import NotFound from "../common/NotFound";
 
 const MovieDetails = () => {
     const { title } = useParams();
@@ -53,7 +54,13 @@ const MovieDetails = () => {
     
           </div>
         )
-      }
+    }
+
+    if (movieInfo.Response === "False") {
+      return (
+        <NotFound />
+      )
+    }
 
     return (
         <div className="pt-5">
