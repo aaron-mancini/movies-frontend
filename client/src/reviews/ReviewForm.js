@@ -38,6 +38,7 @@ const ReviewForm = ({ movieId, createReview, title }) => {
 
     return (
         <div>
+            <h2>Write a review!</h2>
             <Card>
                 <CardBody>
                     <Form onSubmit={handleSubmit}>
@@ -59,6 +60,7 @@ const ReviewForm = ({ movieId, createReview, title }) => {
                     </Form>
                 </CardBody>
             </Card>
+            <hr></hr>
         </div>
     )
 }

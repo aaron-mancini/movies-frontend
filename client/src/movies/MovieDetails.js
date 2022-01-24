@@ -92,12 +92,12 @@ const MovieDetails = () => {
             <hr></hr>
               <div className="container col-md-6 offset-md-3 col-lg-6">              
               {
-              (reviews.some(r => r.username === currentUser.username)) ? 
+              currentUser && (reviews.some(r => r.username === currentUser.username)) ? 
               <div></div> : 
               <div>
-                <h2>Write a review!</h2>
+                
                 <ReviewForm movieId={movieInfo.imdbID} title={movieInfo.Title} createReview={createReview} />
-                <hr></hr>
+                
               </div>
               }
               </div>          
