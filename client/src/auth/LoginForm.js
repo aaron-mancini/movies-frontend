@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Button, Card, CardBody, Form, FormGroup, Input, Label } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+import Alert from "../common/Alert";
 
 const LoginForm = ({ login }) => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState();
+    const [formErrors, setFormErrors] = useState([]);
 
     const handleChange = evt => {
         const { name, value } = evt.target;
@@ -19,6 +21,8 @@ const LoginForm = ({ login }) => {
         let result = await login(formData);
         if (result.success) {
             navigate("/");
+        } else {
+            setFormErrors(result.error);
         }
     }
 
@@ -45,6 +49,9 @@ const LoginForm = ({ login }) => {
                                         onChange={handleChange}
                                     />
                                 </FormGroup>
+                                {formErrors.length
+                                    ? <Alert type="danger" messages={formErrors} />
+                                    : null}
                                 <Button type="submit" color="primary">
                                     Submit
                                 </Button>
