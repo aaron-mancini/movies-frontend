@@ -4,7 +4,7 @@ import { Card, CardImg, CardBody, CardTitle, Col, CardText } from "reactstrap";
 const MovieCard = ({ title, year, poster, type }) => {
     return (
         <Col>
-            <a href={`/movie/${title}`}>
+            <a href={`/movie/${year}/${title}`}>
             <Card>
                 <CardImg
                     alt="poster"

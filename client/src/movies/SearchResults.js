@@ -14,6 +14,7 @@ const SearchResults = () => {
     useEffect(function loadMovieList() {
         async function getMovies() {
             let movies = await MoviesApi.movieSearch(searchTerm);
+            console.log(movies);
             setMoviesList(movies.Search);
             console.log(moviesList);
             setLoading(true);

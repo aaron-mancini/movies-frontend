@@ -102,7 +102,7 @@ function App() {
           <Route path="/" element={<Home />}/>
 
           <Route path="/search" element={<SearchResults />}/>
-          <Route path="/movie/:title" element={<MovieDetails />}/>
+          <Route path="/movie/:year/:title" element={<MovieDetails />}/>
           <Route path="/profile" element={<ProfileForm logout={logout}/>} />
           <Route path="/reviews" element={<UserReviews />} />
           <Route path="/reviews/edit/:id" element={<EditReviewForm />} />

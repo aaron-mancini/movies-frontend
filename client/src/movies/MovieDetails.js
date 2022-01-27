@@ -8,7 +8,7 @@ import UserContext from "../auth/UserContext";
 import NotFound from "../common/NotFound";
 
 const MovieDetails = () => {
-    const { title } = useParams();
+    const { title, year } = useParams();
     console.debug("MovieTitle:", title);
 
     const [movieInfo, setMovieInfo] = useState();
@@ -20,7 +20,7 @@ const MovieDetails = () => {
     useEffect(function getMovieDetails() {
         async function getMovie() {
             try {
-                let movie = await MoviesApi.getMovie(title);      
+                let movie = await MoviesApi.getMovie(title, year);      
                 setMovieInfo(movie);
                 setMovieId(movie.imdbID);
                 let movieReviews = await MoviesApi.getMovieReviews(movieId);
@@ -32,7 +32,7 @@ const MovieDetails = () => {
         }
         setLoading(false);
         getMovie();
-    }, [title, movieId]);
+    }, [title, movieId, year]);
 
     async function createReview(data) {
         try {

@@ -69,14 +69,14 @@ class MoviesApi {
     /** Search for a movie */
 
     static async movieSearch(term) {
-        let res = await this.request(`movies/search/${term}`);
+        let res = await this.request(`movies/?search=${term}`);
         return res.movie;
     }
 
     /** Get movie details */
 
-    static async getMovie(title) {
-        let res = await this.request(`movies/${title}`);
+    static async getMovie(title, year) {
+        let res = await this.request(`movies/${year}/${title}`);
         return res.movie;
     }
 
