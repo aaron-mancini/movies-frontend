@@ -53,6 +53,6 @@ This API contains a few enpoints to search for movie data. Data is fairly standa
 
 ## To-Do
 
-- Add homepage
-- Add 404 page
+- Add loading spinner
+- fix responsiveness for Movies Details page
 - Change movie card hover feature
