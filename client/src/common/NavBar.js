@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Navbar, Nav, NavbarBrand, NavItem, Form, Input, Button, NavbarToggler, Collapse } from "reactstrap";
 import UserContext from "../auth/UserContext";
 
 const NavBar = ({ logout }) => {
     const navigate = useNavigate();
+    const [expanded, setExpanded] = useState(false);
     const { currentUser } = useContext(UserContext);
     const [formData, setFormData] = useState();
 
@@ -21,18 +22,22 @@ const NavBar = ({ logout }) => {
         navigate(`/search?q=${formData.search}`)
     }
 
+    const handleClick = () => {
+        setExpanded(expanded ? false : true);
+    }
+
     if(currentUser) {
         return (
             <div>
-                <Navbar expand="md" color="dark" dark>
+                <Navbar color="dark" dark expand="md">
                     <NavbarBrand href="/">FilmRate</NavbarBrand>
-                    <NavbarToggler onClick={function noRefCheck(){}} />
-                    <Collapse navbar>
+                    <NavbarToggler onClick={handleClick} />
+                    <Collapse navbar isOpen={expanded}>
                         <Nav 
                         className="me-auto" 
                         navbar
                         > 
-                            <NavItem>
+                            <NavItem className="py-2">
                                 <Form className="d-flex" onSubmit={handleSubmit}>                    
                                     <Input 
                                         type="search"
@@ -44,14 +49,14 @@ const NavBar = ({ logout }) => {
                                 </Form>
                             </NavItem>
                         </Nav>
-                        <Nav>
-                            <NavItem className="px-2">
+                        <Nav className="d-flex flex-row-reverse">
+                            <NavItem className="p-2">
                                 <Button href="/profile">Profile</Button>
                             </NavItem>
-                            <NavItem>
+                            <NavItem className="py-2">
                                 <Button href="/reviews">My Reviews</Button>
                             </NavItem>
-                            <NavItem className="px-2">
+                            <NavItem className="p-2">
                                 <Button href="/" onClick={logout}>Log out</Button>
                             </NavItem>
                         </Nav>                        
@@ -62,15 +67,15 @@ const NavBar = ({ logout }) => {
     }
     return (
         <div>
-            <Navbar expand="md" color="dark" dark>
+            <Navbar color="dark" dark expand="md">
                 <NavbarBrand href="/">FilmRate</NavbarBrand>
-                <NavbarToggler onClick={function noRefCheck(){}} />
-                <Collapse navbar>
+                <NavbarToggler onClick={handleClick} />
+                <Collapse navbar isOpen={expanded}>
                     <Nav
                     className="me-auto"
                     navbar
                     >
-                        <NavItem>
+                        <NavItem className="py-2">
                             <Form className="d-flex" onSubmit={handleSubmit}>
                                 <Input 
                                     type="search"
@@ -82,11 +87,11 @@ const NavBar = ({ logout }) => {
                             </Form>
                         </NavItem>              
                     </Nav>
-                    <Nav>
-                        <NavItem className="px-2">
+                    <Nav className="d-flex flex-row-reverse">
+                        <NavItem className="p-2">
                             <Button href="/login">Log in</Button>
                         </NavItem>
-                        <NavItem className="mr-1">
+                        <NavItem className="mr-1 py-2">
                             <Button href="/signup">Sign up</Button>
                         </NavItem>
                     </Nav>

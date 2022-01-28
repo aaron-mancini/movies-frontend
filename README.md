@@ -42,7 +42,7 @@ This API contains a few enpoints to search for movie data. Data is fairly standa
   - axios
 - Postgresql
 
-## Imporvements/Issues
+## Improvements/Issues
 
 - Search suggestion dropdown: add suggestions to a dropdown menu on the search bar
 - Allow users to comment on other user reveiws and vote on reviews
@@ -56,3 +56,8 @@ This API contains a few enpoints to search for movie data. Data is fairly standa
 - Add loading spinner
 - fix responsiveness for Movies Details page
 - Change movie card hover feature
+
+## Fixed
+
+- Navbar Collapse button
+- center carousel on sm screen

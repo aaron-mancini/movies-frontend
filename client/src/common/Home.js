@@ -84,7 +84,7 @@ const Home = () => {
         )
     } else {
         return (
-            <div className="container pt-5">
+            <div className="container pt-5 text-center">
                 <div className="row d-flex justify-content-center">
                     <div className="col">
                         
@@ -99,7 +99,7 @@ const Home = () => {
                             </Carousel>
                         
                     </div>
-                    <div className="col d-flex align-items-center">
+                    <div className="col d-flex align-items-center justify-content-center">
                         <div>
                             <div className="justify-content-center d-md-flex d-lg-flex">
                                 <h1 className="text-center">Welcome to FilmRate</h1>
