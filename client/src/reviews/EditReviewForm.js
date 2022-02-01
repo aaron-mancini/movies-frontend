@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Card, CardBody, Form, FormGroup, Label, Input } from "reactstrap";
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect } from "react/cjs/react.development";
 import MoviesApi from "../api/api";
 
 const EditReviewForm = () => {
