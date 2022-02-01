@@ -56,6 +56,8 @@ This API contains a few enpoints to search for movie data. Data is fairly standa
 - Add loading spinner
 - fix responsiveness for Movies Details page
 - Change movie card hover feature
+- The api does not allow for very vague searches. Update site response to give more info.
+  Also if move is found for a short response such as "It" then check a title api request before giving error.
 
 ## Fixed
 
