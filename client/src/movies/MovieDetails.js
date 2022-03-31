@@ -6,6 +6,7 @@ import ReviewForm from "../reviews/ReviewForm";
 import Reviews from "../reviews/Reviews";
 import UserContext from "../auth/UserContext";
 import NotFound from "../common/NotFound";
+import Loading from "../common/Loading";
 
 const MovieDetails = () => {
     const { title, year } = useParams();
@@ -51,7 +52,7 @@ const MovieDetails = () => {
     if (!loading) {
         return (
           <div>
-    
+            <Loading />
           </div>
         )
     }

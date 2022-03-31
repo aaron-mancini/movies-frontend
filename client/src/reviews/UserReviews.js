@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Row } from "reactstrap";
 import MoviesApi from "../api/api";
 import UserContext from "../auth/UserContext";
+import Loading from "../common/Loading";
 import ReviewCard from "./ReviewCard";
 
 const UserReviews = () => {
@@ -27,7 +28,7 @@ const UserReviews = () => {
     if (!loading) {
         return (
           <div>
-    
+            <Loading />
           </div>
         )
     }

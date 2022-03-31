@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Row } from "reactstrap";
 import MoviesApi from "../api/api";
+import Loading from "../common/Loading";
 import NotFound from "../common/NotFound";
 import MovieCard from "./MovieCard";
 
@@ -26,7 +27,7 @@ const SearchResults = () => {
     if (!loading) {
         return (
           <div>
-    
+            <Loading />
           </div>
         )
     }

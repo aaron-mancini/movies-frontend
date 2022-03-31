@@ -16,3 +16,13 @@ body {
   color: black;
 }
 
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 15rem;
+}

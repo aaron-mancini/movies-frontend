@@ -53,7 +53,6 @@ This API contains a few enpoints to search for movie data. Data is fairly standa
 
 ## To-Do
 
-- Add loading spinner
 - fix responsiveness for Movies Details page
 - Change movie card hover feature
 - The api does not allow for very vague searches. Update site response to give more info.
@@ -61,5 +60,6 @@ This API contains a few enpoints to search for movie data. Data is fairly standa
 
 ## Fixed
 
+- Added loading spinner
 - Navbar Collapse button
 - center carousel on sm screen

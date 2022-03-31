@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Card, CardBody, Form, FormGroup, Label, Input } from "reactstrap";
 import { useParams, useNavigate } from "react-router-dom";
 import MoviesApi from "../api/api";
+import Loading from "../common/Loading";
 
 const EditReviewForm = () => {
     const navigate = useNavigate();
@@ -69,7 +70,7 @@ const EditReviewForm = () => {
     if (!loading) {
         return (
           <div>
-    
+            <Loading />
           </div>
         )
     }
